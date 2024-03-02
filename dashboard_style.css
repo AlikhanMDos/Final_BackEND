@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    background: url('https://gas-kvas.com/grafic/uploads/posts/2023-09/1695976336_gas-kvas-com-p-kartinki-garazh-30.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: if you want to make header slightly dark to improve text visibility */
+}
+
+h2 {
+    color: #fff;
+    /* Remove margin-left and use text-align to center text */
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    margin: 0 10px; /* Add equal margin on both sides to create space between buttons */
+    background: rgb(91, 91, 91);
+    border-radius: 1em;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    color: #fff; /* Change text color to white */
+}
+
+
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* add full width and height if you want this to fill the viewport */
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    /* Add padding for smaller screens if necessary */
+}
+
+.carousel-item img {
+    max-height: 500px;
+    width: auto;
+    display: block;
+    margin: auto;
+    /* Make sure the image is responsive */
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    /* Ensure the caption is visible on smaller screens */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive styles, if needed */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Smaller font size for small screens */
+    }
+    /* Any other responsive adjustments */
+}

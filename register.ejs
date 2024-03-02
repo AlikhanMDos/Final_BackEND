@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/register_style.css">
+    <script>
+        function validateRegistration() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // You can add more client-side validation here if needed
+
+            if (!username.trim() || !password.trim()) {
+                alert('Please enter both username and password.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <h1>Register</h1>
+    <form action="/register" method="post" onsubmit="return validateRegistration()">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        <br>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required>
+        <br>
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" required>
+        <br>
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <button type="submit">Register</button>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </form>
+</div>
+</body>
+</html>

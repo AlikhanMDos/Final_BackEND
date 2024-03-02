@@ -1,0 +1,103 @@
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    color: #333;
+    background: url('https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-Wall-Background.jpg') no-repeat;
+}
+
+header {
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Forms and inputs */
+form {
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #060a15;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Styling for messages */
+p {
+    color: #060a15;
+    margin-top: 20px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #060a15;
+    color: white;
+}
+
+td {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* Button inside table */
+table button {
+    background-color: #060a15;
+    padding: 5px 10px;
+    font-size: 16px;
+}

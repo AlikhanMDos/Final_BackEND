@@ -1,0 +1,61 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-Wall-Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+select {
+    background: rgba(255, 255, 255, 0.25);
+    color: #000;
+    padding-left: 40px;
+}
+
+button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+button:active {
+    transform: scale(0.98);
+}

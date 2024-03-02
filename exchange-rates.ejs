@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Rates</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Дополнительные стили можно добавить здесь */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url('https://million-wallpapers.ru/wallpapers/3/62/472488580412863/ara-bett-rylymy.jpg'); 
+        }
+        #exchangeRateChart {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .list-container {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .rate-item {
+            background-color: #edf2f7;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+        }
+        .rate-item:last-child {
+            border-bottom: none;
+        }
+        .rate-item > span {
+            display: inline-block;
+            min-width: 100px;
+        }
+        h1{
+          color:#fff;
+          font-size:40px;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <div class="text-center">
+        <h1>Exchange Rates</h1>
+        <div id="exchangeRateChart"></div>
+        <div class="list-container bg-white rounded shadow">
+            <% for(const [currency, rate] of Object.entries(rates)) { %>
+                <div class="rate-item">
+                    <span class="font-semibold"><%= currency %>:</span>
+                    <%= rate %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('exchangeRateChart').getContext('2d');
+        const exchangeRateChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(ratesData),
+                datasets: [{
+                    label: 'Exchange Rate',
+                    data: Object.values(ratesData),
+                    backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+    <h1>Edit Car</h1>
+</header>
+<div class="container">
+    <!-- Form for editing a car -->
+    <form action="/admin/edit-car/<%= car._id %>" method="post">
+        <h2>Edit Car</h2>
+        <label for="model">Model:</label>
+        <input type="text" name="model" id="model" value="<%= car.model %>" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" value="<%= car.description %>" required>
+        <br>
+        <!-- You may want to add or modify fields specific to cars, such as engine type, horsepower, etc. -->
+        <label for="picture1">Picture 1 URL:</label>
+        <input type="text" name="picture1" id="picture1" value="<%= car.picture1 %>" required>
+        <br>
+        <label for="picture2">Picture 2 URL:</label>
+        <input type="text" name="picture2" id="picture2" value="<%= car.picture2 %>" required>
+        <br>
+        <label for="picture3">Picture 3 URL:</label>
+        <input type="text" name="picture3" id="picture3" value="<%= car.picture3 %>" required>
+        <br>
+        <button type="submit">Update Car</button>
+    </form>
+</div>
+</body>
+</html>

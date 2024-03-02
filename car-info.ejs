@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" href="/device_style.css"> <!-- Changed the stylesheet name -->
+</head>
+<body>
+    <div class="container">
+        <h1>Car Information</h1>
+        <% cars.forEach(car => { %> <!-- Changed 'devices' to 'cars' -->
+            <div class="car"> <!-- Changed class name -->
+                <h2><%= car.ModelName %></h2> <!-- Changed to reflect car model -->
+                <p><span class="strong">Brand:</span> <%= car.Brand %></p>
+                <p><span class="strong">Engine:</span> <%= car.Engine %></p> <!-- Updated to show engine info -->
+                <p><span class="strong">Horsepower:</span> <%= car.Horsepower %></p> <!-- Updated to show horsepower -->
+                <p><span class="strong">Torque:</span> <%= car.Torque %></p> <!-- Updated to show torque -->
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

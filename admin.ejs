@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/admin_style.css">
+</head>
+<body>
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+<div class="container">
+    <!-- Form for adding a new car -->
+    <form action="/admin/add-car" method="post" onsubmit="return validateAdd()">
+        <h2>Add Car</h2>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="picture1">Picture 1 link:</label>
+        <input type="text" name="picture1" id="picture1" required>
+        <br>
+        <label for="picture2">Picture 2 link:</label>
+        <input type="text" name="picture2" id="picture2" required>
+        <br>
+        <label for="picture3">Picture 3 link:</label>
+        <input type="text" name="picture3" id="picture3" required>
+        <br>
+        <label for="model">Model:</label>
+        <input type="text" name="model" id="model" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" required>
+        <br>
+
+        <button type="submit">Add Car</button>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </form>
+</div>
+<div class="container">
+    <!-- Form for editing an existing car -->
+    <form action="/admin/edit-car" method="post" onsubmit="return validateEdit()">
+        <h2>Edit Car</h2>
+        <label for="objectId">ID:</label>
+        <input type="text" name="objectId" id="objectId" required>
+        <br>
+        <label for="model">Model:</label>
+        <input type="text" name="model" id="model" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" required>
+        <br>
+
+        <button type="submit">Edit Car</button>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </form>
+</div>
+<!-- Table to display all cars -->
+<h2>All Cars</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Car ID</th>
+        <th>Username</th>
+        <th>Model</th>
+        <th>Created At</th>
+        <th>Action</th> <!-- New column for actions -->
+    </tr>
+    </thead>
+    <tbody>
+    <% items.forEach(item => { %>
+        <tr>
+            <td><%= item._id %></td>
+            <td><%= item.username %></td>
+            <td><%= item.model %></td> <!-- Updated to show the model -->
+            <td><%= item.createdAt %></td>
+            <td>
+                <form action="/admin/delete-car/<%= item._id %>" method="post"> <!-- Updated action URL -->
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+</body>
+</html>

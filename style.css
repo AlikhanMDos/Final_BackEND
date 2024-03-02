@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Viewport Height */
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://gas-kvas.com/grafic/uploads/posts/2023-09/1695976336_gas-kvas-com-p-kartinki-garazh-30.jpg');
+    background-size: cover; /* This will cover the entire viewport */
+    background-position: center; /* This will center the image in the viewport */
+    background-repeat: no-repeat; /* This will prevent the image from repeating */
+    background-attachment: fixed; /* This will fix the background image during scroll */
+}
+
+.main-container {
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5em;
+    font-size: 50px;
+    color: #575757;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 1em;
+    text-decoration: none;
+    background: #060a15;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 16px;
+}
